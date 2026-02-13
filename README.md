@@ -5,17 +5,11 @@ A Vite + React web app with a romantic K-pop theme, dynamic member themes, mini 
 ## Tech Stack
 - React (JavaScript)
 - Vite
-- CSS (no Tailwind)
+- CSS
 - localStorage (tasks + snake high score)
 
 ## Features
-- Dynamic theme switcher for:
-  - Cortis (group)
-  - Martin
-  - James
-  - Juhoon
-  - Seonghyeon
-  - Keonho
+- Dynamic theme switcher for each player
 - Theme colors update app-wide (background, buttons, cards, borders, accents)
 - Photo slideshow below top nav (changes by selected theme)
 - To-Do List:
