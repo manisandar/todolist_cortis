@@ -236,10 +236,22 @@ function SnakeGame({ selectedMember, activeImage }) {
       />
 
       <div className="snake-meta">
-        <p>Score: {score}</p>
-        <p>High Score: {highScore}</p>
-        {isGameOver ? <p className="snake-over">Game Over</p> : <p>Beat your high score.</p>}
+        <div className="snake-scoreline">
+          <p>Score: {score}</p>
+          <p>High Score: {highScore}</p>
+        </div>
+        <div className="snake-actions">
+          <button type="button" onClick={startPause}>
+            {isRunning ? 'Pause' : 'Start'}
+          </button>
+          <button type="button" className="snake-reset" onClick={resetGame}>
+            Reset
+          </button>
+        </div>
       </div>
+      <p className={isGameOver ? 'snake-over snake-status' : 'snake-status'} aria-live="polite">
+        {isGameOver ? 'Game Over' : 'Beat your high score.'}
+      </p>
 
       <div className="snake-pad" aria-label="Touch direction controls">
         <button type="button" className="snake-pad-btn up" onClick={() => requestDirection({ x: 0, y: -1 })}>
@@ -256,14 +268,6 @@ function SnakeGame({ selectedMember, activeImage }) {
         </button>
       </div>
 
-      <div className="snake-actions">
-        <button type="button" onClick={startPause}>
-          {isRunning ? 'Pause' : 'Start'}
-        </button>
-        <button type="button" className="snake-reset" onClick={resetGame}>
-          Reset
-        </button>
-      </div>
     </section>
   );
 }
